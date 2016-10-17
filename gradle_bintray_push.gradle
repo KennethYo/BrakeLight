@@ -1,0 +1,92 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = GROUP
+version = VERSION_NAME
+
+install {
+  repositories.mavenInstaller {
+    pom {
+      project {
+        name NAME
+        url URL
+        description DESCRIPTION
+
+        packaging 'aar'
+        groupId GROUP
+        artifactId ARTIFACT_ID
+        version VERSION_NAME
+
+        licenses {
+          license {
+            name 'The Apache Software License, Version 2.0'
+            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            distribution 'repo'
+          }
+        }
+
+        scm {
+          url SCM_URL
+          connection SCM_CONNECTION
+        }
+
+        developers {
+          developer {
+            name 'KennethYo'
+          }
+        }
+      }
+    }
+  }
+}
+task sourcesJar(type: Jar) {
+  from android.sourceSets.main.java.srcDirs
+  classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+  source = android.sourceSets.main.java.srcDirs
+  classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = 'javadoc'
+  from javadoc.destinationDir
+}
+javadoc {
+  options {
+    encoding "UTF-8"
+    charSet 'UTF-8'
+  }
+}
+artifacts {
+  archives javadocJar
+  archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('your_login_local.properties').newDataInputStream())
+
+
+bintray {
+  user = properties.getProperty("BINTRAY_USER")
+  key = properties.getProperty("BINTRAY_APIKEY")
+
+  configurations = ['archives']
+  pkg {
+    repo = GROUP
+    name = NAME
+    websiteUrl = SCM_URL
+    vcsUrl = SCM_CONNECTION
+    licenses = ["Apache-2.0"]
+    issueTrackerUrl = SCM_ISSUE_URL
+    publish = true
+    publicDownloadNumbers = true
+    pkg.version {
+      desc = VERSION_DESCRIPTION
+      attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+      gpg {
+        sign = true
+        passphrase = properties.getProperty("BINTRAY_GPG_PASSWORD")
+      }
+    }
+  }
+}

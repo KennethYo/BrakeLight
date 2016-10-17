@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion 24
+  buildToolsVersion "24.0.2"
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 24
+    versionCode 1
+    versionName "1.0"
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+ext.NAME = "YBrakeLight"
+ext.URL = "https://github.com/KennethYo/YBrakeLight"
+ext.DESCRIPTION = "android watch exception library"
+
+ext.GROUP = "me.kennethyo.library"
+ext.ARTIFACT_ID = "ybrakelight"
+
+ext.VERSION_NAME = "0.1"
+ext.VERSION_DESCRIPTION = "init"
+
+ext.SCM_URL = "https://github.com/KennethYo/YBrakeLight"
+ext.SCM_ISSUE_URL = "https://github.com/KennethYo/YBrakeLight/issues"
+ext.SCM_CONNECTION = "https://github.com/KennethYo/YBrakeLight.git"
+
+//apply from: "${project.rootDir}/gradle_mvn_push.gradle"
+apply from: "${project.rootDir}/gradle_bintray_push.gradle"
