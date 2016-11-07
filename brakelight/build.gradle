@@ -38,5 +38,8 @@ ext.SCM_URL = "https://github.com/KennethYo/BrakeLight"
 ext.SCM_ISSUE_URL = "https://github.com/KennethYo/BrakeLight/issues"
 ext.SCM_CONNECTION = "https://github.com/KennethYo/BrakeLight.git"
 
-apply from: "${project.rootDir}/gradle_mvn_push.gradle"
-apply from: "${project.rootDir}/gradle_bintray_push.gradle"
+def file = new File("${project.rootDir}/your_login_local.properties")
+if (file.exists()) {
+  apply from: "${project.rootDir}/gradle_mvn_push.gradle"
+  apply from: "${project.rootDir}/gradle_bintray_push.gradle"
+}
