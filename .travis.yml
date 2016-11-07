@@ -7,4 +7,5 @@ android:
     - tools
     - build-tools-24.0.2
     - android-24
-    - extra
+    - extra-android-m2repository
+    - extra-android-support
