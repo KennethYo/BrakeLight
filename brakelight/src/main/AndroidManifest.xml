@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yiche.library.brakelight">
+    package="me.kennethyo.library.ybrakelight">
 
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -9,10 +9,10 @@
       android:allowBackup="true"
       android:label="@string/app_name"
       android:supportsRtl="true">
-    <activity android:name=".internal.DisplayLightActivity">
+    <activity android:name="me.kennethyo.library.ybrakelight.internal.DisplayLightActivity">
     </activity>
 
-    <service android:name=".internal.DisplayLightService"/>
+    <service android:name="me.kennethyo.library.ybrakelight.internal.DisplayLightService"/>
   </application>
 
 </manifest>
