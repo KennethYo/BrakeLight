@@ -38,5 +38,5 @@ ext.SCM_URL = "https://github.com/KennethYo/YBrakeLight"
 ext.SCM_ISSUE_URL = "https://github.com/KennethYo/YBrakeLight/issues"
 ext.SCM_CONNECTION = "https://github.com/KennethYo/YBrakeLight.git"
 
-//apply from: "${project.rootDir}/gradle_mvn_push.gradle"
+apply from: "${project.rootDir}/gradle_mvn_push.gradle"
 apply from: "${project.rootDir}/gradle_bintray_push.gradle"

@@ -24,7 +24,7 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-ext.NAME = "YBrakeLight"
+ext.NAME = "YBrakeLight-NO-OP"
 ext.URL = "https://github.com/KennethYo/YBrakeLight"
 ext.DESCRIPTION = "android watch exception library"
 
@@ -34,9 +34,9 @@ ext.ARTIFACT_ID = "ybrakelight-no-op"
 ext.VERSION_NAME = "0.1"
 ext.VERSION_DESCRIPTION = "init"
 
-ext.SCM_URL = "https://github.com/KennethYo/YBrakeLight-NO-OP"
-ext.SCM_ISSUE_URL = "https://github.com/KennethYo/YBrakeLight-NO-OP/issues"
-ext.SCM_CONNECTION = "https://github.com/KennethYo/YBrakeLight-NO-OP.git"
+ext.SCM_URL = "https://github.com/KennethYo/YBrakeLight"
+ext.SCM_ISSUE_URL = "https://github.com/KennethYo/YBrakeLight/issues"
+ext.SCM_CONNECTION = "https://github.com/KennethYo/YBrakeLight.git"
 
-//apply from: "${project.rootDir}/gradle_mvn_push.gradle"
+apply from: "${project.rootDir}/gradle_mvn_push.gradle"
 apply from: "${project.rootDir}/gradle_bintray_push.gradle"
