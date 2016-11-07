@@ -29,7 +29,7 @@ ext.URL = "https://github.com/KennethYo/BrakeLight"
 ext.DESCRIPTION = "android watch exception library"
 
 ext.GROUP = "me.kennethyo.library"
-ext.ARTIFACT_ID = "ybrakelight"
+ext.ARTIFACT_ID = "brakelight"
 
 ext.VERSION_NAME = "0.1"
 ext.VERSION_DESCRIPTION = "init"
