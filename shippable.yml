@@ -3,6 +3,9 @@ language: java
 jdk:
   - oraclejdk8
 
+install:
+  - sudo apt-get install -u lib32stdc++6 lib32z1
+
 build:
   ci:
    - ./gradlew aR
