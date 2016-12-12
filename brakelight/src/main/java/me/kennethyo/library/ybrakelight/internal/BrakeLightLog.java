@@ -18,11 +18,11 @@ public final class BrakeLightLog {
     @Override public void d(String message, Object... args) {
       String formatted = String.format(message, args);
       if (formatted.length() < 4000) {
-        Log.d("LeakCanary", formatted);
+        Log.d("BrakeLight", formatted);
       } else {
         String[] lines = formatted.split("\n");
         for (String line : lines) {
-          Log.d("LeakCanary", line);
+          Log.d("BrakeLight", line);
         }
       }
     }
