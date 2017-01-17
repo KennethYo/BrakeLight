@@ -1,4 +1,4 @@
-package me.kennethyo.library.ybrakelight.internal;
+package me.kennethyo.library.brakelight.internal;
 
 import java.io.Serializable;
 

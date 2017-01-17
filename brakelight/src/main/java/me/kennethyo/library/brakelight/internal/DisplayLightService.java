@@ -1,4 +1,4 @@
-package me.kennethyo.library.ybrakelight.internal;
+package me.kennethyo.library.brakelight.internal;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -37,7 +37,7 @@ public class DisplayLightService extends IntentService {
   }
 
   private void onDisplay(Light light) {
-    String contentTitle = "YBrakeLight";
+    String contentTitle = "BrakeLight";
     String contentText = "Click for more details";
 
     PendingIntent pendingIntent = DisplayLightActivity.createPendingIntent(this, light);
@@ -53,7 +53,7 @@ public class DisplayLightService extends IntentService {
 
     Notification notification;
     Notification.Builder builder = new Notification.Builder(context) //
-        .setSmallIcon(me.kennethyo.library.ybrakelight.R.drawable.ic_brake_light)
+        .setSmallIcon(me.kennethyo.library.brakelight.R.drawable.ic_brake_light)
         .setWhen(System.currentTimeMillis())
         .setContentTitle(contentTitle)
         .setContentText(contentText)

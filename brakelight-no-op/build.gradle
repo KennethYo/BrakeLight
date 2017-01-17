@@ -34,8 +34,8 @@ ext.DESCRIPTION = "android watch exception library"
 ext.GROUP = "me.kennethyo.library"
 ext.ARTIFACT_ID = "brakelight-no-op"
 
-ext.VERSION_NAME = "0.1"
-ext.VERSION_DESCRIPTION = "init"
+ext.VERSION_NAME = "1.0.0"
+ext.VERSION_DESCRIPTION = "release 1.0.0"
 
 ext.SCM_URL = "https://github.com/KennethYo/BrakeLight"
 ext.SCM_ISSUE_URL = "https://github.com/KennethYo/BrakeLight/issues"

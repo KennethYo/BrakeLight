@@ -1,4 +1,4 @@
-package me.kennethyo.library.ybrakelight.internal;
+package me.kennethyo.library.brakelight.internal;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -22,9 +22,9 @@ public class DisplayLightActivity extends Activity {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(me.kennethyo.library.ybrakelight.R.layout.activity_display_watch);
+    setContentView(me.kennethyo.library.brakelight.R.layout.activity_display_watch);
 
-    tvMsg = (TextView) findViewById(me.kennethyo.library.ybrakelight.R.id.tv_msg);
+    tvMsg = (TextView) findViewById(me.kennethyo.library.brakelight.R.id.tv_msg);
 
     Light light = (Light) getIntent().getSerializableExtra(SHOW_WATCH_EXTRA);
     if (light != null) {
