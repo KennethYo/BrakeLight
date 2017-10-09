@@ -1,9 +1,9 @@
 apply plugin: 'maven'
 
 //release 地址
-def RELEASE_REPOSITORY_URL = "http://192.168.19.106:8081/nexus/content/repositories/releases/"
+def RELEASE_REPOSITORY_URL = "http://172.20.10.54:8081/nexus/content/repositories/releases/"
 //snapshots 地址
-def SNAPSHOT_REPOSITORY_URL = "http://192.168.19.106:8081/nexus/content/repositories/snapshots/"
+def SNAPSHOT_REPOSITORY_URL = "http://172.20.10.54:8081/nexus/content/repositories/snapshots/"
 //判断 VERSION_NAME 如果以`-SHAPSHOT`结尾,则上传地址为 snapshot 地址
 def REPOSITORY_URL = VERSION_NAME.endsWith("-SNAPSHOT") ? SNAPSHOT_REPOSITORY_URL :
     RELEASE_REPOSITORY_URL;
