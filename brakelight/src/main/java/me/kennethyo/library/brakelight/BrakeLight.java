@@ -11,7 +11,6 @@ public class BrakeLight {
 
   public static BrakeLightWatch install(Application application) {
     return new BrakeLightWatch(application);
-    //.listenerServiceClass(DisplayLightService.class);
   }
 
   private BrakeLight() {

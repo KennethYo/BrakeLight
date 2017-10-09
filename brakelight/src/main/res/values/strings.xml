@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">BrakeLight</string>
+  <string name="crash_info">Crash Information</string>
 </resources>

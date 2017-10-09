@@ -2,11 +2,11 @@ package me.kennethyo.library.brakelight.internal;
 
 import android.util.Log;
 
-public final class BrakeLightLog {
+final class BrakeLightLog {
 
   private static volatile Logger logger = new DefaultLogger();
 
-  public interface Logger {
+  interface Logger {
     void d(String message, Object... args);
 
     void d(Throwable throwable, String message, Object... args);
@@ -36,7 +36,7 @@ public final class BrakeLightLog {
     BrakeLightLog.logger = logger;
   }
 
-  public static void d(String message, Object... args) {
+  static void d(String message, Object... args) {
     // Local variable to prevent the ref from becoming null after the null check.
     Logger logger = BrakeLightLog.logger;
     if (logger == null) {
@@ -45,7 +45,7 @@ public final class BrakeLightLog {
     logger.d(message, args);
   }
 
-  public static void d(Throwable throwable, String message, Object... args) {
+  static void d(Throwable throwable, String message, Object... args) {
     // Local variable to prevent the ref from becoming null after the null check.
     Logger logger = BrakeLightLog.logger;
     if (logger == null) {

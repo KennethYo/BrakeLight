@@ -23,15 +23,15 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
  * Created by kenneth on 2016/10/17.
  */
 
-public class BrakeLightInternal {
+class BrakeLightInternal {
 
   private static final Executor fileIoExecutor = newSingleThreadExecutor("File-IO");
 
-  public static Executor newSingleThreadExecutor(String threadName) {
+  private static Executor newSingleThreadExecutor(String threadName) {
     return Executors.newSingleThreadExecutor(new BrakeLightSingleThreadFactory(threadName));
   }
 
-  public static void executeOnFileIoThread(Runnable runnable) {
+  static void executeOnFileIoThread(Runnable runnable) {
     fileIoExecutor.execute(runnable);
   }
 
@@ -45,7 +45,7 @@ public class BrakeLightInternal {
     });
   }
 
-  public static void setEnabledBlocking(Context appContext, Class<?> componentClass,
+  private static void setEnabledBlocking(Context appContext, Class<?> componentClass,
       boolean enabled) {
     ComponentName component = new ComponentName(appContext, componentClass);
     PackageManager packageManager = appContext.getPackageManager();
@@ -102,17 +102,17 @@ public class BrakeLightInternal {
     return myProcess.processName.equals(serviceInfo.processName);
   }
 
-  public static boolean hasSDCard() {
+  static boolean hasSDCard() {
     return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
   }
 
 
-  public static File externalStorageDirectory(Context context) {
+  static File externalStorageDirectory(Context context) {
     File downloadsDirectory = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS);
-    return new File(downloadsDirectory, "brakelight-" + context.getPackageName());
+    return new File(downloadsDirectory, "BrakeLight-" + context.getPackageName());
   }
 
-  public static boolean directoryWritableAfterMkdirs(File directory) {
+  static boolean directoryWritableAfterMkdirs(File directory) {
     boolean success = directory.mkdirs();
     return (success || directory.exists()) && directory.canWrite();
   }

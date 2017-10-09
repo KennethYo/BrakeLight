@@ -54,6 +54,8 @@ public final class BrakeLightWatch {
     File file = new File(path, fileName);
 
     try {
+      msg = msg.replaceAll("\n", "\n\n");
+
       FileWriter fileWriter = new FileWriter(file);
       fileWriter.write(msg);
       fileWriter.close();
