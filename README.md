@@ -2,7 +2,7 @@
 
 Brake Light 中文意思是刹车灯，当集成到 Android 应用中，测试时发生 crash ，会在通知栏显示一条消息，点击消息显示 crash 信息，极大方便了测试同学把 crash 的信息传递给开发同学。
 
-![演示图片](http://gitlab.bitautotech.com/youzc/BrakeLight/blob/master/ezgif.com-video-to-gif.gif)
+![演示图片](ezgif.com-video-to-gif.gif)
 
 # Download
 
