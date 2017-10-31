@@ -13,20 +13,22 @@ import java.util.Locale;
  * Created by kenneth on 2016/10/17.
  */
 
-public final class BrakeLightWatch {
+public final class BrakeLightWatch implements Thread.UncaughtExceptionHandler {
   private final Context context;
+  private Thread.UncaughtExceptionHandler exceptionHandler;
 
   public BrakeLightWatch(Context context) {
     this.context = context.getApplicationContext();
+    exceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
+    Thread.setDefaultUncaughtExceptionHandler(this);
   }
 
-  //public BrakeLightWatch listenerServiceClass(Class listenerServiceClass) {
-  //  setEnabled(context, listenerServiceClass, true);
-  //  return this;
-  //}
+  @Override public void uncaughtException(Thread thread, Throwable throwable) {
+    watch(throwable);
+    exceptionHandler.uncaughtException(thread, throwable);
+  }
 
   public BrakeLightWatch watch(Throwable throwable) {
-
     return watch(Log.getStackTraceString(throwable));
   }
 

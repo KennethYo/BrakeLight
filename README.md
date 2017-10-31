@@ -8,18 +8,17 @@ Brake Light 中文意思是刹车灯，当集成到 Android 应用中，测试�
 
 ```groovy
 dependencies {
-    debugCompile 'me.kennethyo.library:brakelight:1.0.0'
-    releaseCompile 'me.kennethyo.library:brakelight-no-op:1.0.0'
+    debugCompile 'me.kennethyo.library:brakelight:1.1.0'
+    releaseCompile 'me.kennethyo.library:brakelight-no-op:1.1.0'
 }
 ```
 
 # Compile
 
 ```java
-public class MyApplication extends Application implements Thread.UncaughtExceptionHandler {
+public class MyApplication extends Application {
 
   private static MyApplication instance;
-  private Thread.UncaughtExceptionHandler exceptionHandler;
 
   public static MyApplication getInstance() {
     return instance;
@@ -31,24 +30,17 @@ public class MyApplication extends Application implements Thread.UncaughtExcepti
     super.onCreate();
     instance = this;
     watch = BrakeLight.install(this);
-    exceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-    Thread.setDefaultUncaughtExceptionHandler(this);
   }
 
   public BrakeLightWatch getWatch() {
     return watch;
-  }
-
-  @Override public void uncaughtException(Thread t, Throwable e) {
-    getWatch().watch(e);
-    exceptionHandler.uncaughtException(t, e);
   }
 }
 ```
 
 # Todo
 
-- 简化集成，`UncaughtExceptionHandler`移入 Library.
+- ~~简化集成，`UncaughtExceptionHandler`移入 Library.~~
 - 系统分享，增加文件方式.
 - crash 信息列表.
 - 支持文件选择器打开报错文件.
