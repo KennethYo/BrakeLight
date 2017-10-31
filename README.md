@@ -52,6 +52,7 @@ public class MyApplication extends Application implements Thread.UncaughtExcepti
 - 系统分享，增加文件方式.
 - crash 信息列表.
 - 支持文件选择器打开报错文件.
+- 支持消息通知振动和铃声.
 
 # License
 
