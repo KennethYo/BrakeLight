@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BrakeLight.iml" filepath="$PROJECT_DIR$/BrakeLight.iml" />
-      <module fileurl="file://$PROJECT_DIR$/YBrakeLight.iml" filepath="$PROJECT_DIR$/YBrakeLight.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/brakelight/brakelight.iml" filepath="$PROJECT_DIR$/brakelight/brakelight.iml" />
       <module fileurl="file://$PROJECT_DIR$/brakelight-no-op/brakelight-no-op.iml" filepath="$PROJECT_DIR$/brakelight-no-op/brakelight-no-op.iml" />
