@@ -35,4 +35,6 @@ dependencies {
 
   debugCompile project(':brakelight')
   releaseCompile project(':brakelight-no-op')
+//  debugCompile 'me.kennethyo.library:brakelight:1.2.0'
+//  releaseCompile 'me.kennethyo.library:brakelight-no-op:1.2.0'
 }
