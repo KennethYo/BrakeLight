@@ -8,8 +8,8 @@ Brake Light 中文意思是刹车灯，当集成到 Android 应用中，测试�
 
 ```groovy
 dependencies {
-    debugCompile 'me.kennethyo.library:brakelight:1.2.0'
-    releaseCompile 'me.kennethyo.library:brakelight-no-op:1.2.0'
+    debugCompile 'me.kennethyo.library:brakelight:latest.version'
+    releaseCompile 'me.kennethyo.library:brakelight-no-op:latest.version'
 }
 ```
 
