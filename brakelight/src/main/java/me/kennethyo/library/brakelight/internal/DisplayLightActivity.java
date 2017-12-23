@@ -20,10 +20,17 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import me.kennethyo.library.brakelight.R;
 
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
@@ -50,8 +57,16 @@ public class DisplayLightActivity extends Activity implements View.OnClickListen
     btnShare.setOnClickListener(this);
 
     light = (Light) getIntent().getSerializableExtra(SHOW_WATCH_EXTRA);
-    if (light != null) {
-      tvMsg.setText(light.msg);
+    if (light != null && !TextUtils.isEmpty(light.msg)) {
+      String msg = light.msg.replaceAll("\n", "\n\n");
+      SpannableStringBuilder sb = new SpannableStringBuilder(msg);
+      Pattern pattern = Pattern.compile("([\\w]+Exception:)|(Caused by:)");
+      Matcher matcher = pattern.matcher(sb);
+      while (matcher.find()) {
+        sb.setSpan(new ForegroundColorSpan(Color.RED), matcher.start(), matcher.end(),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      }
+      tvMsg.setText(sb);
     }
   }
 
