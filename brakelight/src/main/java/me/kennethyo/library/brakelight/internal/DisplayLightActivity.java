@@ -57,10 +57,12 @@ public class DisplayLightActivity extends Activity implements View.OnClickListen
     btnShare.setOnClickListener(this);
 
     light = (Light) getIntent().getSerializableExtra(SHOW_WATCH_EXTRA);
+
     if (light != null && !TextUtils.isEmpty(light.msg)) {
       String msg = light.msg.replaceAll("\n", "\n\n");
       SpannableStringBuilder sb = new SpannableStringBuilder(msg);
-      Pattern pattern = Pattern.compile("([\\w]+Exception:)|(Caused by:)");
+      //Pattern pattern = Pattern.compile("([\\w]+Exception:)|(Caused by:)");
+      Pattern pattern = Pattern.compile(".*Exception.*");
       Matcher matcher = pattern.matcher(sb);
       while (matcher.find()) {
         sb.setSpan(new ForegroundColorSpan(Color.RED), matcher.start(), matcher.end(),
